@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">  <title>Document</title>
+  <title>Bulletin Borad</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/post.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class="back-wrapper">
+  <div class="wrapper">
+    <div class="post-wrapper">
+      <p>登録削除</p>
+
+      <div class="post-user">
+        <% if(user.image == ''){ %>
+          <div class="image-null"><%= user.name %></div>
+        <% } else { %>
+          <img class="user-image" src="<%= user.image %>">
+        <% } %>
+
+        <p class="main-name"><%= user.name %></p>
+      </div>
+
+      <div class="post-form">
+        <h3>登録情報を削除した際には、<br>同時に投稿内容も削除され今後閲覧できません。<br>
+          本当によろしいですか？
+        </h3>
+        <form action="/account_delete/<%= user.name %>" method="post">
+          <label for="name"></label>
+          <input type="hidden" name="name" value="<%= user.name %>">
+          <input type="submit" value="削除">
+        </form>
+      </div>
+      
+      <div class="post-main-btn">
+        <a href="/main" class="btn">戻る</a>
+      </div>
+    </div>
+    <script src="/style.js"></script>
+  </div>
+</body>
+</html>

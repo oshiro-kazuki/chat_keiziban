@@ -1,0 +1,67 @@
+.post-wrapper {
+  height: 300px;
+  width: 330px;
+  margin: 50px auto;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px rgb(89, 171, 171);
+  background-color: rgb(226, 255, 80);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.post-wrapper > p {
+  text-align: center;
+  margin: 10px 0 0;
+}
+
+.post-user {
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.post-image {
+  margin-right: 10px;
+}
+
+.post-form {
+  box-sizing: border-box;
+  margin: 0 auto;
+  text-align: center;
+  width: 250px;
+  position: relative;
+}
+
+.post-form > h3 {
+  text-align: left;
+}
+
+.post-btn,
+.update-btn {
+  position: absolute;
+  top: 100px;
+  left: 40px;
+}
+
+.reset-btn,
+.delete-btn {
+  position: absolute;
+  top: 100px;
+  right: 40px;
+}
+
+.post-main-btn {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+
+
+/* .delete-btn {
+  float: left;
+} */
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">  <title>Document</title>
+  <title>Bulletin Borad</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body class="back-wrapper">
+  <header>
+    <p class="hello">Hello!  <%= userName %></p>
+    
+    <div class="header-btn">
+      <span id="menu-btn" class="material-icons">menu</span>
+      <div id="menu-bar" class="hidden">
+        <a href="/logout" class="btn-logout">Logout</a>
+        <a href="/account_del/<%= userName %>" class="btn-account-del">Account deletion</a>
+        <!-- <a href="/post_mult" class="btn-account-del">post multiple</a> -->
+        <span id="menu-close">Bar close</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrapper">
+    <a href="/post/<%= userName %>" class="btn btn-post">+</a>
+    <a href="/page_update" class="btn btn-page"><img src="images/yazirusi.PNG" class="img-page"></a>
+    <img id="scrollImg">
+    
+
+    <div class="main-items">
+      <% tableResult.forEach((p) => { %>
+        <% if(p.user_id === userName) { %>
+          <div class="user-box">
+            <% if(p.image == '' || p.image == null){ %>
+              <div class="image-null"><%= p.not_img %></div>
+            <% } else { %>
+              <img class="user-image" src="<%= p.image %>">
+            <% } %>
+
+            <div class="user-box2">
+              <p class="user-name"><%= p.show_user %></p>
+
+              <div class="user-comment">
+                <a class="user-message" href="/edit/<%= p.id %>"><%= p.message %></a>
+                <div class="user-frame"></div>
+              </div>
+
+              <p class="user-date"><%= p.created_post %></p>
+            </div>
+          </div>
+          <% } else { %>
+            <div class="other-box">
+              <% if(p.image == '' || p.image == null){ %>
+                <div class="image-null"><%= p.not_img %></div>
+              <% } else { %>
+                <img class="other-image" src="<%= p.image %>">
+              <% } %>
+
+              <div class="other-box2">
+                <p class="other-name"><%= p.show_user %></p>
+
+                <div class="other-comment">
+                  <div class="other-frame"></div>
+                  <p class="other-message"><%= p.message %></p>
+                </div>
+
+                <p class="other-date"><%= p.created_post %></p>
+              </div>
+            </div>
+        <% } %>
+      <% }) %>
+    </div>
+  </div>
+  <script src="/style.js"></script>
+  <script src="/main.js"></script>
+</body>
+</html>

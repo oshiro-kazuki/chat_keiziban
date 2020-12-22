@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">  <title>Document</title>
+  <title>Bulletin Borad</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/post.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class="back-wrapper">
+  <div class="wrapper">
+    <div class="post-wrapper">
+      <p>修正内容</p>
+
+      <div class="post-user">
+        <% if(userImage == null || userImage == ''){ %>
+          <div class="image-null"><%= p.not_img %></div>
+        <% } else { %>
+          <img class="user-image" src="<%= userImage %>">
+        <% } %>
+
+        <p class="main-name"><%= p.show_user %></p>
+      </div>
+
+      <div class="post-form">
+        <form action="/post_update/<%= p.id %>" method="post">
+          <label for="message"></label>
+          <textarea name="message" rows="5" cols="30" placeholder="入力する" autofocus required maxlength="140"><%= p.message %></textarea>
+          <input type="submit" value="修正" class="update-btn">
+        </form>
+             
+        <form action="/post_delete/<%= p.id %>" method="post">
+          <input type="submit" value="削除" class="delete-btn">
+        </form>
+      </div>
+      
+      <div class="post-main-btn">
+        <a href="/main" class="btn">戻る</a>
+      </div>
+    </div>
+    <script src="/style.js"></script>
+  </div>
+</body>
+</html>

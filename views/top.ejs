@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>chat keiziban</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/top.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <div class="wrapper">
+    <img src="/images/ri-su.PNG" class="ri-su">
+    <img src="/images/bell.PNG" class="bell">
+    
+    <div id="login-form">
+      <p>ログイン</p>
+
+      <form action="/login" method="post">
+        <label for="username">お名前を入力してください</label>
+        <input type="text" name="username" placeholder="name" required autofocus><br>
+
+        <label for="password">パスワードを入力してください</label>
+        <input type="password" name="password" placeholder="password" required autofocus><br>
+        
+        <input type="submit" value="login"><br>
+      </form>
+    </div>
+
+    <div id="signup-form" class="hidden">
+      <p>新規登録</p>
+
+      <form action="/signup" method="post">
+        <label for="username">お名前を登録してください</label>
+        <input type="text" name="username" placeholder="英数字8文字を登録" maxlength="8" required autofocus><br>
+
+        <label for="password">パスワードを登録してください</label>
+        <input type="password" name="password" placeholder="お名前と同じに登録" required autofocus><br>
+
+        <label for="image">画像URLを登録してください</label>
+        <input type="text" name="image" placeholder="URL" autofocus><br>
+
+        <!-- <div id="drop-area">
+          <p>こちらにファイルをドラッグ＆ドロップもしくは</p>
+          <label for="image">画像を登録してください</label>
+          <input type="file" name="image" placeholder="画像を選択"><br>
+        </div>
+
+        <p>アップロードした画像</p>
+        <div id="drop-view"></div> -->
+      
+        <input type="submit" value="signup"><br>
+      </form>
+    </div>
+
+    <div id="signup-btn">登録</div>
+    <div id="loginback-btn" class="hidden">戻る</div>
+
+    <!-- <a href="/main">main</a> -->
+  </div>
+  <script src="/style.js"></script>
+  <script src="/top.js"></script>
+</body>
+</html>
